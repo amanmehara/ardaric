@@ -29,14 +29,10 @@
 <script>
   $(document).ready(function () {
     var post = $('.post-content');
-    // Format code blocks and add line numbers
+    // Add line numbers in code blocks.
     function codestyling() {
       $('pre code').each(function (i, e) {
-        // Code highlight
-        hljs.highlightBlock(e);
-        // No lines for plain text blocks
         var code = $(this);
-        // Compute number of lines.
         var lines = code.html().split(/\n(?!$)/g).length;
         var numbers = [];
         lines++;

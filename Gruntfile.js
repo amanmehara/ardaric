@@ -11,9 +11,7 @@ module.exports = function(grunt) {
       'cssTargetDir': 'assets/css',
       'jsSrcDir': 'src/js',
       'jsTargetDir': 'assets/js',
-      'jsDependencies': [
-        '<%= config.jsSrcDir %>/libs/highlight.pack.js'
-      ]
+      'jsDependencies': []
     },
     copy: {
       dev: {
