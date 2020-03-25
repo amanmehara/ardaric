@@ -27,29 +27,30 @@
       {{navigation}}
       <ul class="nav-side">
         {{#if @site.twitter}}
-        <li class="nav-twitter"><a title="Twitter" href="{{twitter_url}}" title="{{@site.twitter}}" target="_blank"><i
-              class="icon icon-twitter"></i><span>Twitter</span></a></li>
+        <li>
+          <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">
+          {{> "icons/twitter-square"}}
+          </a>
+        </li>
         {{/if}}
         {{#if @site.facebook}}
-        <li class="nav-facebook"><a title="Facebook" href="{{facebook_url}}" title="{{@site.facebook}}"
-            target="_blank"><i class="icon icon-facebook"></i><span>Facebook</span></a></li>
+        <li>
+          <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">
+            {{> "icons/facebook-square"}}
+            </a>
+        </li>
         {{/if}}
-        {{#if @labs.subscribers}}
-        <li class="nav-subscribe"><a title="Subscribe" href="{{@site.url}}/subscribe/" target="_blank"><i
-              class="icon icon-mail"></i><span>{{t "Subscribe"}}</span></a></li>
-        {{/if}}
-        <li class="nav-rss"><a title="RSS" href="{{@site.url}}/rss/" target="_blank"><i
-              class="icon icon-rss"></i><span>RSS</span></a></li>
-        <li class="nav-search" style="display: none;"><a title="{{t "Search"}}"><i
-              class="icon icon-search"></i><span>{{t "Search"}}</span></a></li>
+        <li>
+          <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">
+          {{> "icons/rss-square"}}
+          </a>
+        </li>
       </ul>
     </nav>
 
     <div class="nav-wrapper-control">
       <div class="inner">
         <a class="nav-menu"><i class="icon icon-menu"></i>{{t "Menu"}}</a>
-        <a class="nav-search" style="display: none;" title="{{t "Search"}}"><i
-            class="icon icon-search"></i><span>{{t "Search"}}</span></a>
       </div>
     </div>
   </div>
@@ -60,15 +61,18 @@
     {{{body}}}
 
     <div class="nav-footer">
-      <nav class="nav-wrapper">
-        {{#if @site.secondary_navigation}}
-        {{navigation type="secondary"}}
-        {{else}}
-        <span class="nav-copy">{{@site.title}} &copy; {{date format='YYYY'}}</span>
-        {{/if}}
-        <span class="nav-credits">{{t "Published with"}} <a href="https://ghost.org">Ghost</a> &bull; {{t "Theme" }} <a
-            href="https://github.com/amanmehara/ardaric">Ardaric</a></span>
-      </nav>
+      <div class="inner">
+        <nav class="nav-wrapper">
+          {{#if @site.secondary_navigation}}
+          {{navigation type="secondary"}}
+          {{else}}
+          <span class="nav-copy">{{@site.title}} &copy; {{date format='YYYY'}}</span>
+          {{/if}}
+          <span class="nav-credits">
+            {{t "Published with"}} <a href="https://ghost.org/">Ghost</a> &bull; {{t "Theme" }} <a href="https://github.com/amanmehara/ardaric">Ardaric</a>
+          </span>
+        </nav>
+      </div>
     </div>
 
   </section>
