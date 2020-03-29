@@ -1,6 +1,7 @@
 /* ==========================================================================
    Includes
    ========================================================================== */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
 @import "colors";
 @import "fonts";
 $breakpoint-medium: 640px;
@@ -21,12 +22,11 @@ html.menu-active {
 body {
 	margin: 0;
 	font-family: 'Fira Sans', sans-serif;
-	color: $color-text-primary;
 	text-rendering: geometricPrecision;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
-	background: #FFF;
+	background: whitesmoke;
 }
 
 button,
@@ -578,12 +578,12 @@ textarea {
    ========================================================================== */
 .blog-header {
 	position: relative;
-	padding-top: calc(16rem + 4vw);
+	padding-top: 12rem;
 
 	&.has-cover {
 		padding-top: calc(24rem + 8vw);
-		color: #FFF;
-		background: #000;
+		color: #ffffff;
+		background: #000000;
 		overflow: hidden;
 		text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 
@@ -642,31 +642,26 @@ textarea {
 }
 
 .blog-name {
-	display: block;
 	margin: 0;
-	padding: 0;
-	font-weight: 300;
-	font-size: 2rem;
-	line-height: 1.5rem;
+	font-weight: 900;
+	font-size: 2.4rem;
 	text-decoration: none;
-	color: #000;
+	color: #000000;
 }
 
 .has-cover .blog-name {
-	color: #FFF;
+	color: #ffffff;
 }
 
 .blog-description {
 	font-family: Georgia, serif;
-	display: block;
-	padding: 0;
-	font-size: 1rem;
-	line-height: 1rem;
+	font-size: 1.2rem;
+	line-height: 1.8rem;
 	color: $color-text-secondary;
 }
 
 .has-cover .blog-description {
-	color: #FFF;
+	color: #ffffff;
 }
 
 .archive {
@@ -674,7 +669,7 @@ textarea {
 	z-index: 10;
 
 	&.archive-box {
-		padding-bottom: calc(4rem + 2vw);
+		padding-bottom: 2rem;
 		border-bottom: 1px solid $color-border;
 	}
 
@@ -1097,10 +1092,8 @@ textarea {
 
 .nav-footer .nav-wrapper {
 	display: flex;
-	@media only screen and (max-width: $breakpoint-medium) {
-		flex-direction: column;
-		text-align: center;
-	}
+	flex-direction: column;
+	text-align: center;
 }
 
 .nav-footer ul {
@@ -1178,8 +1171,6 @@ textarea {
 	position: relative;
 
 	.post .post-box {
-		padding-top: calc(1rem + 2vw);
-		padding-bottom: calc(1rem + 2vw);
 		border-bottom: 1px solid $color-border;
 	}
 
@@ -1299,11 +1290,10 @@ textarea {
 }
 
 .post-title {
-	position: relative;
 	z-index: 10;
+	margin-bottom: 0;
 	font-size: 2rem;
-	font-weight: 300;
-	color: #000;
+	font-weight: 700;
 
 	a {
 		text-decoration: none;
@@ -1313,15 +1303,14 @@ textarea {
 }
 
 .has-cover .post-title {
-	color: #FFF;
+	color: #ffffff;
 }
 
 .post-meta {
-	font-weight: 300;
+	font-size: 0.8rem;
 	color: $color-text-secondary;
 
 	a {
-		display: inline-block;
 		text-decoration: none;
 		color: inherit;
 
@@ -1407,7 +1396,6 @@ textarea {
 }
 
 .post-excerpt {
-	margin: 1rem 0 0;
 	font-family: Georgia, serif;
 	font-size: 1rem;
 	line-height: 1.5em;
@@ -1505,6 +1493,7 @@ textarea {
 	&:focus,
 	&:hover {
 		background: #ff6f00;
+		color: #000000;
 	}
 }
 /* ==========================================================================
@@ -1751,69 +1740,24 @@ textarea {
 /* ==========================================================================
    Pagination
    ========================================================================== */
-.pagination {
-	position: relative;
-	margin: 0;
-
-	.pagination-box {
+.pagination .pagination-box {
+		display: flex;
+		justify-content: center;
 		padding: 2rem 0rem;
-
-		&:after {
-			clear: both;
-			content: '';
-			display: table;
-		}
-	}
 }
 
 .pagination a {
-	position: relative;
-	display: block;
-	z-index: 100;
-	text-align: center;
 	text-decoration: none;
-	color: $color-neutral-60;
-	transition: all ease 0.2s;
+	width: 1rem;
+	fill: $color-text-secondary;
 
 	&:focus,
 	&:hover {
-		color: $color-primary-active;
-		border-color: $color-primary-active;
-	}
-}
-
-.pagination .pagination-next {
-	float: right;
-}
-
-.pagination .pagination-prev {
-	float: left;
-}
-
-.pagination .pagination-label {
-	position: relative;
-	@media only screen and (max-width: $breakpoint-medium) {
-		display: none;
-	}
-}
-
-.pagination a i {
-	position: relative;
-	color: inherit;
-
-	&:before {
-		position: relative;
-		width: auto;
-		margin: auto;
+		fill: #ff6f00;
 	}
 }
 
 .pagination .pagination-info {
-	position: absolute;
-	width: 100%;
-	left: 0;
-	z-index: 50;
-	display: block;
-	text-align: center;
+	margin: 0 1rem;
 	color: $color-text-secondary;
 }

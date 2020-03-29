@@ -2,16 +2,14 @@
   <div class="inner">
     <div class="box pagination-box" role="navigation" aria-label="Pagination Navigation">
       {{#if prev}}
-      <a title="{{t "Previous"}}" class="pagination-prev" href="{{page_url prev}}">
-        <i class="icon icon-arrow-left"></i>
-        <span class="pagination-label">{{t "Previous"}}</span>
+      <a title="{{t "Previous"}}" href="{{page_url prev}}">
+        {{> "icons/long-arrow-alt-left"}}
       </a>
       {{/if}}
-      <span class="pagination-info">{{t "Page {page} of {pages}" page=page pages=pages}}</span>
+      <span class="pagination-info">{{t "{page}/{pages}" page=page pages=pages}}</span>
       {{#if next}}
-      <a title="{{t "Next"}}" class="pagination-next" href="{{page_url next}}">
-        <span class="pagination-label">{{t "Next"}}</span>
-        <i class="icon icon-arrow-right"></i>
+      <a title="{{t "Next"}}" href="{{page_url next}}">
+        {{> "icons/long-arrow-alt-right"}}
       </a>
       {{/if}}
     </div>
