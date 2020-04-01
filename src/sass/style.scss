@@ -26,7 +26,6 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
-	background: whitesmoke;
 }
 
 button,
@@ -699,6 +698,8 @@ textarea {
 
 	.archive-title {
 		font-size: 2rem;
+		margin-block-start: 0.4rem;
+		margin-block-end: 0.4rem;
 	}
 
 	.archive-description {
@@ -716,31 +717,31 @@ textarea {
 
 		a {
 			display: inline-block;
-			color: $color-primary;
+			fill: $color-primary;
 			transition: color linear 0.1s;
 			width: 1.5rem;
 
 			&:focus,
 			&:hover {
-				color: $color-primary-active;
+				fill: $color-primary-active;
 			}
 		}
 	}
 
 	&.archive-author {
-		padding-left: 12rem;
+		padding-left: 8rem;
 		@media only screen and (max-width: $breakpoint-medium) {
 			padding-left: 0;
-			padding-right: 10rem;
+			padding-right: 6rem;
 		}
 
 		.archive-avatar {
 			position: absolute;
 			top: 0;
-			left: 2rem;
-			width: 6rem;
-			height: 6rem;
-			border-radius: 3rem;
+			left: 1rem;
+			width: 5.2rem;
+			height: 5.2rem;
+			border-radius: 2.6rem;
 			overflow: hidden;
 			@media only screen and (max-width: $breakpoint-medium) {
 				left: auto;
@@ -1096,6 +1097,22 @@ textarea {
 	text-align: center;
 }
 
+.nav-footer .nav-wrapper span {
+	font-size: 0.8rem;
+	color: $color-text-secondary;
+
+	a {
+		color: inherit;
+		text-decoration: none;
+		font-weight: 500;
+
+		&:focus,
+		&:hover {
+			color: $amber;
+		}
+	}
+}
+
 .nav-footer ul {
 	position: relative;
 	display: flex;
@@ -1144,26 +1161,6 @@ textarea {
 	}
 }
 
-.nav-copy {
-	display: block;
-	width: 100%;
-	color: $color-text-secondary;
-	@media only screen and (max-width: $breakpoint-medium) {
-		margin-bottom: 1rem;
-	}
-}
-
-.nav-credits {
-	flex-shrink: 0;
-	display: block;
-	color: $color-text-secondary;
-
-	a {
-		color: inherit;
-		text-decoration: none;
-		font-weight: 500;
-	}
-}
 /* ==========================================================================
    Index
    ========================================================================== */
@@ -1313,17 +1310,18 @@ textarea {
 	a {
 		text-decoration: none;
 		color: inherit;
+		font-weight: 500;
 
 		&:focus,
 		&:hover {
-			text-decoration: underline;
+			color: $amber;
 		}
 	}
 }
 
 .post-header .post-meta {
 	position: relative;
-	padding-bottom: 4rem;
+	padding-bottom: 2rem;
 	z-index: 10;
 
 	&:after {
@@ -1337,7 +1335,7 @@ textarea {
 		position: absolute;
 		left: 0;
 		bottom: 0;
-		width: 8rem;
+		width: 100%;
 		height: 1px;
 		background: $color-border;
 	}
@@ -1355,15 +1353,9 @@ textarea {
 		.post-meta-avatar {
 			float: left;
 			display: block;
-			vertical-align: top;
-			width: 4rem;
-			height: 4rem;
-			margin-right: -1rem;
+			width: 2rem;
+			height: 2rem;
 			border-radius: 100%;
-
-			&:last-child {
-				margin-right: 0;
-			}
 
 			a {
 				height: 100%;
@@ -1456,7 +1448,8 @@ textarea {
 
 	&:focus,
 	&:hover {
-		background: #ff6f00;
+		fill: $amber;
+		background: #000000;
 	}
 }
 
@@ -1492,7 +1485,7 @@ textarea {
 
 	&:focus,
 	&:hover {
-		background: #ff6f00;
+		background: $amber;
 		color: #000000;
 	}
 }
@@ -1753,7 +1746,7 @@ textarea {
 
 	&:focus,
 	&:hover {
-		fill: #ff6f00;
+		fill: $amber;
 	}
 }
 
